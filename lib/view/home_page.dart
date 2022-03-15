@@ -38,15 +38,14 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
               MyButton(
                 text: "추가하기",
-                onTap: () => _addBookList(),
+                onTap: () {
+                  _taskController.insertSlot(Book(
+                      title: _titleController.text,
+                      author: _authorController.text,
+                      date: _dateController.text));
+                },
               ),
               const SizedBox(height: 30),
-              InputField(title: "도서 검색"),
-              MyButton(
-                text: "검색하기",
-                onTap: () => print('도서검색'),
-              ),
-              const SizedBox(height: 10),
               MyButton(
                 text: "모든 도서 보기",
                 onTap: () async {
@@ -60,13 +59,21 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  _addBookList() async {
-    int val = await _taskController.addBook(
-        book: Book(
-            id: -1,
-            title: _titleController.text,
-            author: _authorController.text,
-            date: _dateController.text));
-    print('id: $val');
-  }
+  // _addBook() async {
+  //   Future<void> value = _taskController.insertSlot(Book(
+  //       title: _titleController.text,
+  //       author: _authorController.text,
+  //       date: _dateController.text));
+  //   print('추가 탭 누름');
+  // }
+
+  // _addBookList() async {
+  //   int val = await _taskController.addBook(
+  //       book: Book(
+  //           id: -1,
+  //           title: _titleController.text,
+  //           author: _authorController.text,
+  //           date: _dateController.text));
+  //   print('id: $val');
+  // }
 }

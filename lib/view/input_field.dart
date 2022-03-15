@@ -17,6 +17,7 @@ class InputField extends StatelessWidget {
             style: const TextStyle(fontSize: 17),
           ),
           TextFormField(
+            controller: controller,
             decoration: InputDecoration(
               focusedBorder: const UnderlineInputBorder(
                 borderSide: BorderSide(color: Colors.black, width: 0),

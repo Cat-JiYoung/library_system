@@ -25,6 +25,6 @@ class Book {
 
   @override
   String toString() {
-    return 'BookInfo{id: $id, title: $title, author: $author, date: $date}';
+    return 'Book{id: $id, title: $title, author: $author, date: $date}';
   }
 }
